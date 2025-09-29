@@ -69,16 +69,16 @@ export function EducationForm() {
             }
 
             return (
-            <div key={edu.id} className="border rounded-lg p-4 space-y-4">
-              <div className="flex items-center justify-between mb-2">
-                <h3 className="font-semibold">{title}</h3>
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  onClick={() => removeEducation(edu.id)}
-                >
-                  <Trash2 className="h-4 w-4 text-red-500" />
-                </Button>
+              <div key={edu.id} className="border rounded-lg p-4 space-y-4">
+                <div className="flex items-center justify-between mb-2">
+                  <h3 className="font-semibold">{title}</h3>
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    onClick={() => removeEducation(edu.id)}
+                  >
+                    <Trash2 className="h-4 w-4 text-red-500" />
+                  </Button>
               </div>
 
               <div className="grid md:grid-cols-2 gap-4">

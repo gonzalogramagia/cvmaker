@@ -46,7 +46,17 @@ export default function Home() {
       {/* Footer */}
       <footer className="border-t">
         <div className="container mx-auto px-6 h-16 flex items-center justify-between text-sm text-slate-600 dark:text-slate-400">
-          <p>💻 🧉 Desarrollado por Gonza</p>
+          <p>
+            💻 🧉{" "}
+            <a 
+              href="https://gonza.gr" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="hover:underline hover:text-slate-900 dark:hover:text-slate-100 transition-colors"
+            >
+              Desarrollado por Gonza
+            </a>
+          </p>
           <p>© 2025 | CVMaker</p>
         </div>
       </footer>

@@ -59,6 +59,15 @@ export function SkillsForm() {
 
   return (
     <div className="space-y-6">
+      <div className="flex items-center justify-between">
+        <div>
+          <h2 className="text-2xl font-bold">Habilidades</h2>
+          <p className="text-sm text-slate-500">
+            Tus competencias técnicas y profesionales
+          </p>
+        </div>
+      </div>
+
       {resume.skills.length === 0 ? (
         <div className="text-center py-8 text-slate-400">
           <p className="mb-4">No hay habilidades agregadas</p>

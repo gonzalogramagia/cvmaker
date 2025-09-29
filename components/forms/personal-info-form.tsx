@@ -64,7 +64,7 @@ export function PersonalInfoForm() {
   return (
     <form className="space-y-4">
       {/* Photo Upload */}
-      <div className="flex items-center gap-4 pb-4 border-b">
+      <div className="flex items-center gap-4 pb-8 mb-6 border-b">
         {photoPreview ? (
           <div className="relative">
             <img

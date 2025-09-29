@@ -233,13 +233,13 @@ export default function BuilderPage() {
           <div className="space-y-8">
             <div>
               <h1 className="text-3xl font-bold tracking-tight mb-2">Editor</h1>
-              <p className="text-slate-600 dark:text-slate-400">Completá tu información</p>
+              <p className="text-slate-600 dark:text-slate-400">Completá con tu información</p>
             </div>
             
             {/* Section Tabs */}
             <div className="flex gap-2 border-b pb-2">
               <button
-                className={`text-sm px-3 py-1.5 rounded transition-colors ${
+                className={`text-sm px-3 py-1.5 rounded transition-colors cursor-pointer ${
                   activeSection === "personal" 
                     ? "bg-slate-100 dark:bg-slate-800" 
                     : "hover:bg-slate-50 dark:hover:bg-slate-900"
@@ -249,7 +249,7 @@ export default function BuilderPage() {
                 Personal
               </button>
               <button
-                className={`text-sm px-3 py-1.5 rounded transition-colors ${
+                className={`text-sm px-3 py-1.5 rounded transition-colors cursor-pointer ${
                   activeSection === "experience" 
                     ? "bg-slate-100 dark:bg-slate-800" 
                     : "hover:bg-slate-50 dark:hover:bg-slate-900"
@@ -259,7 +259,7 @@ export default function BuilderPage() {
                 Experiencia
               </button>
               <button
-                className={`text-sm px-3 py-1.5 rounded transition-colors ${
+                className={`text-sm px-3 py-1.5 rounded transition-colors cursor-pointer ${
                   activeSection === "education" 
                     ? "bg-slate-100 dark:bg-slate-800" 
                     : "hover:bg-slate-50 dark:hover:bg-slate-900"
@@ -269,22 +269,22 @@ export default function BuilderPage() {
                 Educación
               </button>
               <button
-                onClick={() => setActiveSection("skills")}
-                className={`px-4 py-2 rounded-md transition-colors ${
-                  activeSection === "skills"
-                    ? "bg-slate-900 text-white dark:bg-slate-100 dark:text-slate-900"
-                    : "hover:bg-slate-100 dark:hover:bg-slate-800"
+                className={`text-sm px-3 py-1.5 rounded transition-colors cursor-pointer ${
+                  activeSection === "skills" 
+                    ? "bg-slate-100 dark:bg-slate-800" 
+                    : "hover:bg-slate-50 dark:hover:bg-slate-900"
                 }`}
+                onClick={() => setActiveSection("skills")}
               >
                 Habilidades
               </button>
               <button
-                onClick={() => setActiveSection("other")}
-                className={`px-4 py-2 rounded-md transition-colors ${
-                  activeSection === "other"
-                    ? "bg-slate-900 text-white dark:bg-slate-100 dark:text-slate-900"
-                    : "hover:bg-slate-100 dark:hover:bg-slate-800"
+                className={`text-sm px-3 py-1.5 rounded transition-colors cursor-pointer ${
+                  activeSection === "other" 
+                    ? "bg-slate-100 dark:bg-slate-800" 
+                    : "hover:bg-slate-50 dark:hover:bg-slate-900"
                 }`}
+                onClick={() => setActiveSection("other")}
               >
                 Otros
               </button>
@@ -302,9 +302,9 @@ export default function BuilderPage() {
 
           {/* Preview Panel */}
           <div className="lg:sticky lg:top-24 h-fit">
-            <div className="mb-4">
-              <h2 className="text-lg font-semibold">Vista Previa</h2>
-              <p className="text-xs text-slate-500">Tamaño A4 - Como se verá al imprimir</p>
+            <div>
+              <h1 className="text-3xl font-bold tracking-tight mb-2">Vista Previa</h1>
+              <p className="text-slate-600 dark:text-slate-400 mb-8">Tamaño A4 tal y como se verá al imprimir</p>
             </div>
             
             {/* A4 Paper Simulation - Scaled to fit screen */}
@@ -331,9 +331,19 @@ export default function BuilderPage() {
       </div>
 
       {/* Footer */}
-      <footer className="border-t mt-12">
+      <footer className="border-t mt-6">
         <div className="container mx-auto px-6 h-16 flex items-center justify-between text-sm text-slate-600 dark:text-slate-400">
-          <p>💻 🧉 Desarrollado por Gonza</p>
+          <p>
+            💻 🧉{" "}
+            <a 
+              href="https://gonza.gr" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="hover:underline hover:text-slate-900 dark:hover:text-slate-100 transition-colors"
+            >
+              Desarrollado por Gonza
+            </a>
+          </p>
           <p>© 2025 | CVMaker</p>
         </div>
       </footer>
