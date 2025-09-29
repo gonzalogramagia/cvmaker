@@ -8,7 +8,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
-import { Upload, X, Trash2 } from "lucide-react";
+import { Upload, Trash2 } from "lucide-react";
 
 export function PersonalInfoForm() {
   const { resume, updatePersonalInfo } = useResumeStore();

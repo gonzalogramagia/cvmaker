@@ -90,7 +90,7 @@ export function OtherForm() {
         <>
           {resume.other.map((section, index) => {
             // Generar título dinámico
-            let displayTitle = section.title || `Sección ${index + 1}`;
+            const displayTitle = section.title || `Sección ${index + 1}`;
 
             return (
               <div key={section.id} className="border rounded-lg p-4 space-y-4">
