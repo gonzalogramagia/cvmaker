@@ -101,7 +101,7 @@ export function OtherForm() {
                     size="sm"
                     onClick={() => removeOtherSection(section.id)}
                   >
-                    <Trash2 className="h-4 w-4 text-red-500" />
+                    <Trash2 className="h-4 w-4 text-[#6CACE4]" />
                   </Button>
                 </div>
 
@@ -128,7 +128,7 @@ export function OtherForm() {
                         <button
                           type="button"
                           onClick={() => removeItem(section.id, itemIndex)}
-                          className="text-red-500 hover:text-red-700"
+                          className="text-[#6CACE4] hover:text-[#5A9BD4]"
                         >
                           <X className="h-4 w-4" />
                         </button>

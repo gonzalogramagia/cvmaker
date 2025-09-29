@@ -47,6 +47,14 @@ export function EducationForm() {
 
   return (
     <div className="space-y-6">
+      <div className="flex items-center justify-between">
+        <div>
+          <h2 className="text-2xl font-bold">Educación</h2>
+          <p className="text-sm text-slate-500">
+            Tu formación académica y certificaciones
+          </p>
+        </div>
+      </div>
       {resume.education.length === 0 ? (
         <div className="text-center py-8 text-slate-400">
           <p className="mb-4">No hay educación agregada</p>
@@ -77,7 +85,7 @@ export function EducationForm() {
                     size="sm"
                     onClick={() => removeEducation(edu.id)}
                   >
-                    <Trash2 className="h-4 w-4 text-red-500" />
+                    <Trash2 className="h-4 w-4 text-[#6CACE4]" />
                   </Button>
               </div>
 

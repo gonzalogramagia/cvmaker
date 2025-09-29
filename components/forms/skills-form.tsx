@@ -89,7 +89,7 @@ export function SkillsForm() {
                   size="sm"
                   onClick={() => removeCategory(index)}
                 >
-                  <Trash2 className="h-4 w-4 text-red-500" />
+                  <Trash2 className="h-4 w-4 text-[#6CACE4]" />
                 </Button>
               </div>
 
@@ -118,7 +118,7 @@ export function SkillsForm() {
                       <button
                         type="button"
                         onClick={() => removeSkillFromCategory(index, skillIndex)}
-                        className="hover:text-red-500 transition-colors"
+                        className="hover:text-[#6CACE4] transition-colors"
                       >
                         <X className="h-3 w-3" />
                       </button>

@@ -27,6 +27,7 @@ function ModernTemplate({ resume }: { resume: Resume }) {
       <div className="border-b-2 border-slate-900 dark:border-slate-100 pb-4">
         <div className="flex gap-4 items-start mb-3">
           {personalInfo.photoUrl && (
+            // eslint-disable-next-line @next/next/no-img-element
             <img
               src={personalInfo.photoUrl}
               alt={personalInfo.fullName}

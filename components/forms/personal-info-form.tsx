@@ -8,7 +8,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
-import { Upload, X } from "lucide-react";
+import { Upload, X, Trash2 } from "lucide-react";
 
 export function PersonalInfoForm() {
   const { resume, updatePersonalInfo } = useResumeStore();
@@ -17,7 +17,7 @@ export function PersonalInfoForm() {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors }, // eslint-disable-line @typescript-eslint/no-unused-vars
     reset,
     setValue,
   } = useForm<PersonalInfo>({
@@ -50,6 +50,10 @@ export function PersonalInfoForm() {
         setPhotoPreview(base64);
         setValue("photoUrl", base64);
         handleSubmit(onSubmit)();
+        // Reset input para permitir seleccionar el mismo archivo de nuevo
+        if (e.target) {
+          e.target.value = "";
+        }
       };
       reader.readAsDataURL(file);
     }
@@ -66,20 +70,13 @@ export function PersonalInfoForm() {
       {/* Photo Upload */}
       <div className="flex items-center gap-4 pb-8 mb-6 border-b">
         {photoPreview ? (
-          <div className="relative">
+          <div>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={photoPreview}
               alt="Foto de perfil"
               className="w-24 h-24 rounded-full object-cover border-2"
             />
-            <button
-              type="button"
-              onClick={removePhoto}
-              className="absolute -top-1 -right-1 bg-red-500 text-white rounded-full p-1 hover:bg-red-600 transition-colors"
-            >
-              <X className="h-3 w-3" />
-            </button>
           </div>
         ) : (
           <div className="w-24 h-24 rounded-full border-2 border-dashed border-slate-300 flex items-center justify-center">
@@ -91,19 +88,34 @@ export function PersonalInfoForm() {
           <div className="text-xs text-slate-500 mb-2">
             Opcional. JPG o PNG, máx 2MB
           </div>
-          <label htmlFor="photo-upload" className="cursor-pointer inline-block">
-            <Button type="button" variant="outline" size="sm" className="cursor-pointer">
+          <div className="flex gap-2">
+            <input
+              id="photo-upload"
+              type="file"
+              accept="image/*"
+              className="hidden"
+              onChange={handlePhotoChange}
+            />
+            <Button
+              type="button"
+              variant="outline"
+              size="sm"
+              onClick={() => document.getElementById('photo-upload')?.click()}
+            >
               <Upload className="h-3 w-3 mr-2" />
               {photoPreview ? "Cambiar foto" : "Subir foto"}
             </Button>
-          </label>
-          <input
-            id="photo-upload"
-            type="file"
-            accept="image/*"
-            className="hidden"
-            onChange={handlePhotoChange}
-          />
+            {photoPreview && (
+              <Button
+                type="button"
+                variant="outline"
+                size="sm"
+                onClick={removePhoto}
+              >
+                <Trash2 className="h-3 w-3 text-[#6CACE4]" />
+              </Button>
+            )}
+          </div>
         </div>
       </div>
 
