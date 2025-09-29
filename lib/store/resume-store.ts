@@ -72,18 +72,19 @@ export const useResumeStore = create<ResumeState>()(
     {
       name: "cvmaker-storage",
       version: 1,
-      migrate: (persistedState: any, version: number) => {
+      migrate: (persistedState: unknown, version: number) => {
         // Migración para agregar el campo 'other' a datos antiguos
-        if (version === 0 || !persistedState.resume.other) {
+        const state = persistedState as ResumeState;
+        if (version === 0 || !state.resume?.other) {
           return {
-            ...persistedState,
+            ...state,
             resume: {
-              ...persistedState.resume,
+              ...state.resume,
               other: [],
             },
           };
         }
-        return persistedState;
+        return state;
       },
     }
   )

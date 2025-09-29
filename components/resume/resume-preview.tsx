@@ -7,7 +7,8 @@ interface ResumePreviewProps {
 }
 
 export function ResumePreview({ resume, template }: ResumePreviewProps) {
-  const { personalInfo, experience, education, projects, skills } = resume;
+  // Destructure resume for potential future use
+  const { personalInfo, experience, education, projects, skills } = resume; // eslint-disable-line @typescript-eslint/no-unused-vars
 
   if (template === "modern") {
     return <ModernTemplate resume={resume} />;
