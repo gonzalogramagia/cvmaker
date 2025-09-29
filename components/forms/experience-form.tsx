@@ -28,7 +28,7 @@ export function ExperienceForm() {
     });
   };
 
-  const updateExperience = (id: string, field: keyof Experience, value: any) => {
+  const updateExperience = (id: string, field: keyof Experience, value: Experience[keyof Experience]) => {
     setResume({
       ...resume,
       experience: resume.experience.map((exp) =>

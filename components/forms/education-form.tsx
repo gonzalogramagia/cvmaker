@@ -29,7 +29,7 @@ export function EducationForm() {
     });
   };
 
-  const updateEducation = (id: string, field: keyof Education, value: any) => {
+  const updateEducation = (id: string, field: keyof Education, value: Education[keyof Education]) => {
     setResume({
       ...resume,
       education: resume.education.map((edu) =>

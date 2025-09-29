@@ -12,7 +12,7 @@ export default function Home() {
             CVMaker
           </Link>
           <nav className="flex items-center gap-6">
-            <Link href="/builder">
+            <Link href="/pdf">
               <Button size="sm">Empezar</Button>
             </Link>
           </nav>
@@ -32,7 +32,7 @@ export default function Home() {
               Sin registro. Exportá a PDF al instante.
             </p>
             <div className="flex items-center gap-4">
-              <Link href="/builder">
+              <Link href="/pdf">
                 <Button size="lg" className="gap-2">
                   Empezar
                   <ArrowRight className="h-4 w-4" />
